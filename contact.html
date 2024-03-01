@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Bharat | Contact Us</title>
+  <link rel="stylesheet" href="contact_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <!-- MENU BAR -->
+  <nav>
+    <div class="logo"><img src="images/logo1.png" alt=""></div>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+   
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" style="color:rgb(248, 216, 74);">Contact Us</a></li>
+    </ul>
+    <a class="get-started" href="login.html">Get Started</a>
+
+  </nav>
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="container">
+
+      <div class="chat">
+        <div class="heading">
+          <img src="images/chat.png" alt="">
+          <h2>Chat on us</h2>
+        </div>
+
+        <p>Our friendly team is here to help.
+          <br> info@techvikas.com
+        </p>
+      </div>
+
+      <div class="visit">
+        <div class="heading">
+          <img src="images/visit.png" alt="">
+          <h2>Visit us</h2>
+
+        </div>
+        <p>Come and say hello at our office HQ. <br> 1st Block 1st Cross, Rammurthy nagar, <br>Bangalore-560016</p>
+      </div>
+
+      <div class="call">
+
+        <div class="heading">
+          <img src="images/call.png" alt="">
+          <h2> Call us</h2>
+        </div>
+        <p>Mon - Fri From 8am to 5pm <br> +123 456 7869</p>
+      </div>
+
+    </div>
+
+
+    <div class="formm">
+      <div class="form_heading">
+        <h1>Got an Idea? We've got the skills. <br> Let's team up.</h1>
+
+        <p>Tell us more about yourself and what you've got in mind.</p>
+      </div>
+      <br>
+
+      <form action="contact.html" method="post" class="elements" onsubmit="return validateForm();">
+
+        <div class="name">
+
+          <div class="firstname">
+            <label for="firstName">First Name <span style="color: red; font-size: 20px;">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+          </div>
+
+          <div class="lastname">
+            <label for="lastName" class="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+
+          </div>
+        </div>
+        <label for="email">Email <span style="color: red; font-size: 20px;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter Email Address">
+
+        <label for="phoneNumber">Phone Number <span style="color: red; font-size: 20px;">*</span></label>
+        <div>
+          <select id="countryCode" name="countryCode">
+            <option value="+91">+91-India</option>
+
+          </select>
+          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="12345 67890">
+        </div>
+
+        <label for="message">Message <span style="color: red; font-size: 20px;">*</span></label>
+        <textarea id="message" name="message" placeholder="Enter Your Message Here..."></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    var f = document.querySelector("form"); 
+
+    function validateForm() {
+      var firstName = f.firstName.value;
+      var lastName = f.lastName.value;
+      var email = f.email.value;
+      var phoneNumber = f.phoneNumber.value;
+      var message = f.message.value;
+
+      if (firstName.trim() === "") {
+        alert("Please enter your First Name.");
+        return false;
+      }
+
+      var nameCheck = /^[a-zA-Z\s]*$/;
+      if (!nameCheck.test(firstName) || !nameCheck.test(lastName)) {
+        alert("First and Last Name can't contain numbers.");
+        return false;
+      }
+
+      var emailCheck = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      if (!emailCheck.test(email)) {
+        alert("Please enter a valid Gmail address.");
+        return false;
+      }
+
+      var phoneNumberCheck = /^[1-9]\d{9}$/;
+      if (!phoneNumberCheck.test(phoneNumber)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+      }
+
+      if (message.trim() === "") {
+        alert("Please enter your message.");
+        return false;
+      }
+
+      return true;
+    }
+ /*   f.addEventListener("submit", function (e) {
+      if (!validateForm()) {
+        e.preventDefault();
+      }   });*/
+
+ 
+  </script>
+
+
+  
+</body>
+
+</html>
